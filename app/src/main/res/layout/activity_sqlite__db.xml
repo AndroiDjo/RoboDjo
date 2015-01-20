@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.djo.robodjo.SQLite_DB">
+
+    <Button
+        android:id="@+id/execSQLBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:onClick="onExecSqlBtnClick"
+        android:text="Выполнить SQL" />
+
+    <Button
+        android:id="@+id/selectGetResultBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/execSQLBtn"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:onClick="onSelectBtnClick"
+        android:text="Получить SELECT" />
+
+    <EditText
+        android:id="@+id/SQLEditor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:height="100dp"
+        android:autoText="false"
+        android:gravity="top|left"
+        android:text="select * from sqlite_master" />
+
+    <com.djo.robodjo.TableFixHeaders.TableFixHeaders xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/dbGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/errTextView"
+        android:layout_below="@+id/SQLEditor" />
+
+    <TextView
+        android:id="@+id/errTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/selectGetResultBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffff0029" />
+
+</RelativeLayout>
