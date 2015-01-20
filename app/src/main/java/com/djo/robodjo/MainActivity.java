@@ -20,7 +20,6 @@ public class MainActivity extends Activity /*implements  RecognitionListener*/ {
     private static final String KEYPHRASE = "слушай";
     private static final String START = "запуск";
     Intent SQLiteManager;
-    Intent RecognizerIntent;
     private SpeechRecognizer recognizer;
     private HashMap<String, Integer> captions;
 
@@ -66,9 +65,6 @@ public class MainActivity extends Activity /*implements  RecognitionListener*/ {
         }.execute();*/
 
         SQLiteManager = new Intent(MainActivity.this, SQLite_DB.class);
-        RecognizerIntent = new Intent(this, Recognizer.class);
-
-
     }
 
 
@@ -98,7 +94,7 @@ public class MainActivity extends Activity /*implements  RecognitionListener*/ {
     }
 
     public void onClick(View view) {
-        startActivity(RecognizerIntent);
+
     }
 
     /*@Override
